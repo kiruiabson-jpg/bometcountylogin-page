@@ -1,286 +1,708 @@
 <!DOCTYPE html>
-<html lang="so">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Waafi Loan Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>County Government of Bomet - PMTS</title>
 
-    <!-- Telegram SDK -->
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f1f3f5;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .app-header {
-            width: 100%;
-            background: linear-gradient(to bottom, #82d13d, #a3e635);
-            padding: 20px 24px 40px;
-            color: white;
-            font-size: 24px;
-            font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .app-header .menu-icon {
-            font-size: 28px;
-            cursor: pointer;
-        }
-        
-        .card {
-            background: white;
-            width: 92%;
-            max-width: 450px;
-            margin-top: -25px;
-            padding: 30px 22px 24px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
-        }
-        
-        .card h2 {
-            font-size: 22px;
-            color: #1a1a1a;
-            text-align: center;
-            margin-bottom: 4px;
-        }
-        
-        .card .subtext {
-            font-size: 11px;
-            color: #999;
-            text-align: center;
-            margin-bottom: 28px;
-        }
-        
-        .slider-section {
-            margin-bottom: 24px;
-        }
-        
-        .slider-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 600;
-            font-size: 14px;
-            color: #444;
-            margin-bottom: 4px;
-        }
-        
-        .green-text {
-            color: #82d13d;
-        }
-        
-        input[type="range"] {
-            width: 100%;
-            height: 6px;
-            -webkit-appearance: none;
-            appearance: none;
-            accent-color: #82d13d;
-            background: #e0e0e0;
-            border-radius: 3px;
-            outline: none;
-            margin: 10px 0 6px;
-        }
-        
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 22px;
-            height: 22px;
-            background: #82d13d;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(130, 209, 61, 0.4);
-        }
-        
-        input[type="range"]::-moz-range-thumb {
-            width: 22px;
-            height: 22px;
-            background: #82d13d;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(130, 209, 61, 0.4);
-        }
-        
-        .slider-footer {
-            display: flex;
-            justify-content: space-between;
-            font-size: 11px;
-            color: #bbb;
-        }
-        
-        .result-container {
-            background: #f8faf8;
-            border: 1px solid #eef5ee;
-            border-radius: 14px;
-            padding: 18px 16px;
-            text-align: center;
-            margin: 28px 0 24px;
-        }
-        
-        .result-container p:first-child {
-            font-size: 13px;
-            color: #777;
-            margin-bottom: 4px;
-        }
-        
-        .result-value {
-            color: #82d13d;
-            font-size: 34px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-        
-        .btn-apply {
-            background: linear-gradient(to right, #82d13d, #95e14a);
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 18px;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: opacity 0.2s;
-            letter-spacing: 0.3px;
-        }
-        
-        .btn-apply:active {
-            opacity: 0.85;
-        }
-        
-        .footer {
-            text-align: center;
-            font-size: 11px;
-            color: #ccc;
-            margin: 32px 0 20px;
-            padding-bottom: 16px;
-        }
-    </style>
+      /*==========================
+    GLOBAL
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(180deg,#2e97d4 0%,#2188c6 100%);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+/*==========================
+HEADER
+==========================*/
+
+header{
+
+    height:50px;
+
+    background:#2f96d0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 25px;
+
+    box-shadow:0 2px 6px rgba(0,0,0,.18);
+
+}
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.logo{
+
+    width:34px;
+
+    height:34px;
+
+    object-fit:contain;
+
+}
+
+.logo-area h2{
+
+    color:#fff;
+
+    font-size:21px;
+
+    font-weight:600;
+
+}
+
+/*==========================
+NAVIGATION
+==========================*/
+
+nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:14px;
+
+    padding:10px 18px;
+
+    border-radius:4px;
+
+    transition:.25s;
+
+}
+
+nav a.active{
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+nav a:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+nav a i{
+
+    margin-right:6px;
+
+}
+
+.login-top{
+
+    border:none;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:#4ca6dc;
+
+    padding:10px 18px;
+
+    border-radius:5px;
+
+    box-shadow:0 2px 4px rgba(0,0,0,.25);
+
+    transition:.25s;
+
+}
+
+.login-top:hover{
+
+    background:#5cb3e6;
+
+}
+
+.white-line{
+
+    height:24px;
+
+    background:#f7f7f7;
+
+    box-shadow:0 1px 4px rgba(0,0,0,.12);
+
+}
+
+/*==========================
+MAIN
+==========================*/
+
+.hero{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:70px 15px;
+
+}  
+
+        .login-card{
+
+    width:420px;
+
+    background:white;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.25);
+
+}
+
+.card-header{
+
+    background:#2d99d8;
+
+    color:white;
+
+    text-align:center;
+
+    padding:32px 25px 25px;
+
+}
+
+.card-header h1{
+
+    font-size:18px;
+
+    line-height:30px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+}
+
+.card-header p{
+
+    margin-top:18px;
+
+    font-size:12px;
+
+    line-height:22px;
+
+    opacity:.95;
+
+}
+
+.card-body{
+
+    padding:25px;
+
+}
+
+.card-body label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    color:#333;
+
+    font-weight:500;
+
+}
+
+.card-body input{
+
+    width:100%;
+
+    height:44px;
+
+    margin-bottom:20px;
+
+    padding:0 14px;
+
+    border:1px solid #d7d7d7;
+
+    border-radius:4px;
+
+    outline:none;
+
+    font-size:14px;
+
+    transition:.25s;
+
+}
+
+.card-body input:focus{
+
+    border-color:#2f96d0;
+
+    box-shadow:0 0 0 3px rgba(52,152,219,.18);
+
+}
+        #loginBtn{
+
+    width:100%;
+
+    height:42px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:4px;
+
+    background:#9da9ab;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#loginBtn:hover{
+
+    background:#7d8b8d;
+
+}
+
+.card-footer{
+
+    border-top:1px solid #eee;
+
+    text-align:center;
+
+    padding:18px;
+
+    font-size:13px;
+
+    color:#666;
+
+}
+
+.card-footer a{
+
+    text-decoration:none;
+
+    color:#8b5d3b;
+
+}
+
+.card-footer a:hover{
+
+    text-decoration:underline;
+
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:900px){
+
+header{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:15px;
+
+}
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    margin-top:15px;
+
+}
+
+.logo-area h2{
+
+    font-size:18px;
+
+}
+
+.login-card{
+
+    width:95%;
+
+}
+
+}
+  /* ==========================
+   Extra Animations
+========================== */
+
+body{
+
+    transition:.5s;
+
+}
+
+.login-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(45px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+input:hover{
+
+    border-color:#58aee3;
+
+}
+
+button{
+
+    transition:.3s;
+
+}
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+.login-card:hover{
+
+    box-shadow:0 18px 45px rgba(0,0,0,.30);
+
+}
+
+.logo{
+
+    transition:.35s;
+
+}
+
+.logo:hover{
+
+    transform:rotate(6deg) scale(1.08);
+
+}
+
+nav a{
+
+    position:relative;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-5px;
+
+    width:0;
+
+    height:2px;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}      
+<style>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <div class="app-header">
-        <span>Waafi</span>
-        <span class="menu-icon">☰</span>
+<header>
+
+    <div class="logo-area">
+
+        <!-- Replace with your logo URLs -->
+        <img src="YOUR_LOGO1_URL" class="logo">
+
+        <img src="YOUR_LOGO2_URL" class="logo">
+
+        <h2>COUNTY GOVERNMENT OF BOMET (PMTS)</h2>
+
     </div>
 
-    <!-- Main Card -->
-    <div class="card">
-        <h2>Hel Amaah Deg Deg ah</h2>
-        <p class="subtext">Ansixid degdeg ah • Qiimo tartan ah • Muddooyin dabacsan</p>
+    <nav>
 
-        <!-- Amount Slider -->
-        <div class="slider-section">
-            <div class="slider-header">
-                <span>Qaddarka Amaahda</span>
-                <span id="valAmt" class="green-text">$1,000</span>
-            </div>
-            <input type="range" id="amt" min="100" max="5000" step="100" value="1000">
-            <div class="slider-footer">
-                <span>$100</span>
-                <span>$5,000</span>
-            </div>
+        <a href="#" class="active">
+            <i class="fa fa-home"></i>
+            Main Website
+        </a>
+
+        <a href="#">
+            Dashboard
+        </a>
+
+        <a href="#">
+            Projects
+        </a>
+
+        <a href="#">
+            Reports
+        </a>
+
+        <a href="#">
+            Feedback
+        </a>
+
+        <button class="login-top">
+            <i class="fa fa-lock"></i>
+            Login
+        </button>
+
+    </nav>
+
+</header>
+
+<div class="white-line"></div>
+
+<section class="hero">
+
+    <div class="login-card">
+
+        <div class="card-header">
+
+            <h1>
+                COUNTY GOVERNMENT OF BOMET PROJECTS
+                <br>
+                MONITORING AND TRACKING SYSTEM
+            </h1>
+
+            <p>
+                An Integrated System Designed To Strengthen Project Oversight,
+                Drive Operational Efficiency, And Promote Transparent Accountability
+                Across All County Departments.
+            </p>
+
         </div>
 
-        <!-- Duration Slider -->
-        <div class="slider-section">
-            <div class="slider-header">
-                <span>Muddada Amaahda</span>
-                <span id="valDur" class="green-text">12 bilood</span>
-            </div>
-            <input type="range" id="dur" min="6" max="60" step="6" value="12">
-            <div class="slider-footer">
-                <span>6 bilood</span>
-                <span>60 bilood</span>
-            </div>
+        <div class="card-body">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                placeholder="Enter your username"
+            >
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                placeholder="Enter your password"
+            >
+
+            <button id="loginBtn">
+                Login
+            </button>
+
         </div>
 
-        <!-- Monthly Payment Result -->
-        <div class="result-container">
-            <p>Lacagta Bisha</p>
-            <p id="monthly" class="result-value">$98.33</p>
+        <div class="card-footer">
+
+            Need access?
+            <a href="#">
+                Contact system administrator
+            </a>
+
         </div>
 
-        <!-- Apply Button -->
-        <button class="btn-apply" onclick="goToPage2()">CODSO HADDA</button>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">© 2025 Waafi Soomaaliya</div>
+</section>
 
-    <script>
-        // ---------- Update display on slider change ----------
-        function updateDisplay() {
-            const amountInput = document.getElementById('amt');
-            const durationInput = document.getElementById('dur');
+<script>
+    // ===============================
+// Login Page Script
+// ===============================
 
-            if (!amountInput || !durationInput) return;
+const username = document.querySelector('input[type="text"]');
+const password = document.querySelector('input[type="password"]');
+const loginBtn = document.getElementById("loginBtn");
 
-            const amount = Number(amountInput.value) || 0;
-            const duration = Number(durationInput.value) || 1;
+// Login Validation
+loginBtn.addEventListener("click", function () {
 
-            // Update labels
-            document.getElementById('valAmt').textContent = `$${amount.toLocaleString()}`;
-            document.getElementById('valDur').textContent = `${duration} bilood`;
+    if (username.value.trim() === "") {
 
-            // Monthly payment: (amount × 1.18) / duration
-            const monthly = (amount * 1.18) / duration;
-            document.getElementById('monthly').textContent = `$${monthly.toFixed(2)}`;
-        }
+        alert("Please enter your username.");
+        username.focus();
+        return;
 
-        // ---------- Navigate to page2 ----------
-        function goToPage2() {
-            const amountInput = document.getElementById('amt');
-            const durationInput = document.getElementById('dur');
+    }
 
-            if (!amountInput || !durationInput) return;
+    if (password.value.trim() === "") {
 
-            // Save to localStorage for the next page
-            localStorage.setItem('amount', amountInput.value);
-            localStorage.setItem('loanDuration', durationInput.value + ' Bilood');
+        alert("Please enter your password.");
+        password.focus();
+        return;
 
-            // Navigate to page2.html (same directory)
-            window.location.href = 'page2.html';
-        }
+    }
 
-        // ---------- On page load ----------
-        window.addEventListener('DOMContentLoaded', function() {
-            // Telegram WebApp integration
-            const tg = window.Telegram && window.Telegram.WebApp;
-            if (tg) {
-                tg.ready();
-                tg.expand();
-            }
+    loginBtn.innerHTML = "Logging in...";
 
-            // Attach slider events
-            const amountInput = document.getElementById('amt');
-            const durationInput = document.getElementById('dur');
+    loginBtn.disabled = true;
 
-            if (amountInput) amountInput.addEventListener('input', updateDisplay);
-            if (durationInput) durationInput.addEventListener('input', updateDisplay);
+    setTimeout(() => {
 
-            // Initial calculation
-            updateDisplay();
+        loginBtn.innerHTML = "Login";
+        loginBtn.disabled = false;
+
+        alert("Demo login successful.");
+
+        // Replace with your backend login URL
+        // window.location.href = "dashboard.html";
+
+    }, 1200);
+
+});
+
+
+// Login when pressing Enter
+document.addEventListener("keydown", function(e){
+
+    if(e.key==="Enter"){
+
+        loginBtn.click();
+
+    }
+
+});
+
+
+// Input animation
+document.querySelectorAll("input").forEach(input=>{
+
+    input.addEventListener("focus",()=>{
+
+        input.parentElement.classList.add("active");
+
+    });
+
+    input.addEventListener("blur",()=>{
+
+        input.parentElement.classList.remove("active");
+
+    });
+
+});
+
+
+// Navbar Active State
+document.querySelectorAll("nav a").forEach(link=>{
+
+    link.addEventListener("click",function(e){
+
+        document.querySelectorAll("nav a").forEach(item=>{
+
+            item.classList.remove("active");
+
         });
+
+        this.classList.add("active");
+
+    });
+
+});
+
+
+// Smooth Page Fade
+window.onload=function(){
+
+    document.body.style.opacity="0";
+
+    setTimeout(()=>{
+
+        document.body.style.transition=".5s";
+        document.body.style.opacity="1";
+
+    },100);
+
+};
     </script>
 
 </body>
-
 </html>
