@@ -5,703 +5,664 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>County Government of Bomet - PMTS</title>
 
-    <link rel="stylesheet" href="style.css">
-
     <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-      /*==========================
-    GLOBAL
-==========================*/
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-
-    font-family:'Poppins',sans-serif;
-
-    background:linear-gradient(180deg,#2e97d4 0%,#2188c6 100%);
-
-    min-height:100vh;
-
-    overflow-x:hidden;
-
-}
-
-/*==========================
-HEADER
-==========================*/
-
-header{
-
-    height:50px;
-
-    background:#2f96d0;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:0 25px;
-
-    box-shadow:0 2px 6px rgba(0,0,0,.18);
-
-}
-
-.logo-area{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-}
-
-.logo{
-
-    width:34px;
-
-    height:34px;
-
-    object-fit:contain;
-
-}
-
-.logo-area h2{
-
-    color:#fff;
-
-    font-size:21px;
-
-    font-weight:600;
-
-}
-
-/*==========================
-NAVIGATION
-==========================*/
-
-nav{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-}
-
-nav a{
-
-    text-decoration:none;
-
-    color:#fff;
-
-    font-size:14px;
-
-    padding:10px 18px;
-
-    border-radius:4px;
-
-    transition:.25s;
-
-}
-
-nav a.active{
-
-    background:rgba(255,255,255,.12);
-
-    border:1px solid rgba(255,255,255,.15);
-
-}
-
-nav a:hover{
-
-    background:rgba(255,255,255,.15);
-
-}
-
-nav a i{
-
-    margin-right:6px;
-
-}
-
-.login-top{
-
-    border:none;
-
-    color:white;
-
-    cursor:pointer;
-
-    background:#4ca6dc;
-
-    padding:10px 18px;
-
-    border-radius:5px;
-
-    box-shadow:0 2px 4px rgba(0,0,0,.25);
-
-    transition:.25s;
-
-}
-
-.login-top:hover{
-
-    background:#5cb3e6;
-
-}
-
-.white-line{
-
-    height:24px;
-
-    background:#f7f7f7;
-
-    box-shadow:0 1px 4px rgba(0,0,0,.12);
-
-}
-
-/*==========================
-MAIN
-==========================*/
-
-.hero{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:70px 15px;
-
-}  
-
-        .login-card{
-
-    width:420px;
-
-    background:white;
-
-    border-radius:10px;
-
-    overflow:hidden;
-
-    box-shadow:0 12px 35px rgba(0,0,0,.25);
-
-}
-
-.card-header{
-
-    background:#2d99d8;
-
-    color:white;
-
-    text-align:center;
-
-    padding:32px 25px 25px;
-
-}
-
-.card-header h1{
-
-    font-size:18px;
-
-    line-height:30px;
-
-    font-weight:700;
-
-    text-transform:uppercase;
-
-}
-
-.card-header p{
-
-    margin-top:18px;
-
-    font-size:12px;
-
-    line-height:22px;
-
-    opacity:.95;
-
-}
-
-.card-body{
-
-    padding:25px;
-
-}
-
-.card-body label{
-
-    display:block;
-
-    margin-bottom:8px;
-
-    font-size:14px;
-
-    color:#333;
-
-    font-weight:500;
-
-}
-
-.card-body input{
-
-    width:100%;
-
-    height:44px;
-
-    margin-bottom:20px;
-
-    padding:0 14px;
-
-    border:1px solid #d7d7d7;
-
-    border-radius:4px;
-
-    outline:none;
-
-    font-size:14px;
-
-    transition:.25s;
-
-}
-
-.card-body input:focus{
-
-    border-color:#2f96d0;
-
-    box-shadow:0 0 0 3px rgba(52,152,219,.18);
-
-}
-        #loginBtn{
-
-    width:100%;
-
-    height:42px;
-
-    border:none;
-
-    cursor:pointer;
-
-    border-radius:4px;
-
-    background:#9da9ab;
-
-    color:white;
-
-    font-size:15px;
-
-    font-weight:600;
-
-    transition:.3s;
-
-}
-
-#loginBtn:hover{
-
-    background:#7d8b8d;
-
-}
-
-.card-footer{
-
-    border-top:1px solid #eee;
-
-    text-align:center;
-
-    padding:18px;
-
-    font-size:13px;
-
-    color:#666;
-
-}
-
-.card-footer a{
-
-    text-decoration:none;
-
-    color:#8b5d3b;
-
-}
-
-.card-footer a:hover{
-
-    text-decoration:underline;
-
-}
-
-/*==========================
-RESPONSIVE
-==========================*/
-
-@media(max-width:900px){
-
-header{
-
-    flex-direction:column;
-
-    height:auto;
-
-    padding:15px;
-
-}
-
-nav{
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    margin-top:15px;
-
-}
-
-.logo-area h2{
-
-    font-size:18px;
-
-}
-
-.login-card{
-
-    width:95%;
-
-}
-
-}
-  /* ==========================
-   Extra Animations
-========================== */
-
-body{
-
-    transition:.5s;
-
-}
-
-.login-card{
-
-    animation:fadeUp .8s ease;
-
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-        transform:translateY(45px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-
-    }
-
-}
-
-input:hover{
-
-    border-color:#58aee3;
-
-}
-
-button{
-
-    transition:.3s;
-
-}
-
-button:active{
-
-    transform:scale(.98);
-
-}
-
-.login-card:hover{
-
-    box-shadow:0 18px 45px rgba(0,0,0,.30);
-
-}
-
-.logo{
-
-    transition:.35s;
-
-}
-
-.logo:hover{
-
-    transform:rotate(6deg) scale(1.08);
-
-}
-
-nav a{
-
-    position:relative;
-
-}
-
-nav a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-5px;
-
-    width:0;
-
-    height:2px;
-
-    background:white;
-
-    transition:.3s;
-
-}
-
-nav a:hover::after{
-
-    width:100%;
-
-}      
-<style>
+        /* ==========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #2e97d4 0%, #2188c6 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: .5s;
+        }
+
+        /* ==========================
+           HEADER
+        ========================== */
+
+        header {
+            height: 50px;
+            background: #2f96d0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .18);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+            transition: .35s;
+        }
+
+        .logo:hover {
+            transform: rotate(6deg) scale(1.08);
+        }
+
+        .logo-area h2 {
+            color: #fff;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        /* ==========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            padding: 10px 18px;
+            border-radius: 4px;
+            transition: .25s;
+            position: relative;
+        }
+
+        nav a.active {
+            background: rgba(255, 255, 255, .12);
+            border: 1px solid rgba(255, 255, 255, .15);
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, .15);
+        }
+
+        nav a i {
+            margin-right: 6px;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: .3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .login-top {
+            border: none;
+            color: white;
+            cursor: pointer;
+            background: #4ca6dc;
+            padding: 10px 18px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+            transition: .25s;
+        }
+
+        .login-top:hover {
+            background: #5cb3e6;
+        }
+
+        .white-line {
+            height: 24px;
+            background: #f7f7f7;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .12);
+        }
+
+        /* ==========================
+           MAIN
+        ========================== */
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 15px;
+        }
+
+        .login-card {
+            width: 420px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, .25);
+            animation: fadeUp .8s ease;
+            transition: box-shadow .3s ease;
+        }
+
+        .login-card:hover {
+            box-shadow: 0 18px 45px rgba(0, 0, 0, .30);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(45px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card-header {
+            background: #2d99d8;
+            color: white;
+            text-align: center;
+            padding: 32px 25px 25px;
+        }
+
+        .card-header h1 {
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .card-header p {
+            margin-top: 18px;
+            font-size: 12px;
+            line-height: 22px;
+            opacity: .95;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-body label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .card-body input {
+            width: 100%;
+            height: 44px;
+            margin-bottom: 20px;
+            padding: 0 14px;
+            border: 1px solid #d7d7d7;
+            border-radius: 4px;
+            outline: none;
+            font-size: 14px;
+            transition: .25s;
+        }
+
+        .card-body input:focus {
+            border-color: #2f96d0;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, .18);
+        }
+
+        input:hover {
+            border-color: #58aee3;
+        }
+
+        .action-btn {
+            width: 100%;
+            height: 42px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        #loginBtn {
+            background: #9da9ab;
+            color: white;
+        }
+
+        #loginBtn:hover {
+            background: #7d8b8d;
+        }
+
+        #registerBtn {
+            background: #2d99d8;
+            color: white;
+        }
+
+        #registerBtn:hover {
+            background: #2488c2;
+        }
+
+        button {
+            transition: .3s;
+        }
+
+        button:active {
+            transform: scale(.98);
+        }
+
+        /* ==========================
+           TAB BUTTONS (Login / Register)
+        ========================== */
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tab-buttons button {
+            flex: 1;
+            padding: 14px 10px;
+            border: none;
+            background: none;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #999;
+            transition: .3s;
+            position: relative;
+        }
+
+        .tab-buttons button.active-tab {
+            color: #2d99d8;
+        }
+
+        .tab-buttons button.active-tab::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background: #2d99d8;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .tab-buttons button:hover {
+            color: #2d99d8;
+        }
+
+        /* ==========================
+           FORM SECTIONS (show/hide)
+        ========================== */
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active-section {
+            display: block;
+        }
+
+        .card-footer {
+            border-top: 1px solid #eee;
+            text-align: center;
+            padding: 18px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .card-footer a {
+            text-decoration: none;
+            color: #8b5d3b;
+        }
+
+        .card-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* small helper text */
+        .field-note {
+            font-size: 11px;
+            color: #888;
+            margin-top: -16px;
+            margin-bottom: 18px;
+        }
+
+        /* ==========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 15px;
+            }
+
+            .logo-area h2 {
+                font-size: 18px;
+            }
+
+            .login-card {
+                width: 95%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-
-    <div class="logo-area">
-
-        <!-- Replace with your logo URLs -->
-        <img src="YOUR_LOGO1_URL" class="logo">
-
-        <img src="YOUR_LOGO2_URL" class="logo">
-
-        <h2>COUNTY GOVERNMENT OF BOMET (PMTS)</h2>
-
-    </div>
-
-    <nav>
-
-        <a href="#" class="active">
-            <i class="fa fa-home"></i>
-            Main Website
-        </a>
-
-        <a href="#">
-            Dashboard
-        </a>
-
-        <a href="#">
-            Projects
-        </a>
-
-        <a href="#">
-            Reports
-        </a>
-
-        <a href="#">
-            Feedback
-        </a>
-
-        <button class="login-top">
-            <i class="fa fa-lock"></i>
-            Login
-        </button>
-
-    </nav>
-
-</header>
-
-<div class="white-line"></div>
-
-<section class="hero">
-
-    <div class="login-card">
-
-        <div class="card-header">
-
-            <h1>
-                COUNTY GOVERNMENT OF BOMET PROJECTS
-                <br>
-                MONITORING AND TRACKING SYSTEM
-            </h1>
-
-            <p>
-                An Integrated System Designed To Strengthen Project Oversight,
-                Drive Operational Efficiency, And Promote Transparent Accountability
-                Across All County Departments.
-            </p>
-
+    <header>
+        <div class="logo-area">
+            <!-- Replace with your logo URLs -->
+            <img src="YOUR_LOGO1_URL" class="logo" alt="Logo 1">
+            <img src="YOUR_LOGO2_URL" class="logo" alt="Logo 2">
+            <h2>COUNTY GOVERNMENT OF BOMET (PMTS)</h2>
         </div>
 
-        <div class="card-body">
-
-            <label>Username</label>
-
-            <input
-                type="text"
-                placeholder="Enter your username"
-            >
-
-            <label>Password</label>
-
-            <input
-                type="password"
-                placeholder="Enter your password"
-            >
-
-            <button id="loginBtn">
+        <nav>
+            <a href="#" class="active">
+                <i class="fa fa-home"></i>
+                Main Website
+            </a>
+            <a href="#">Dashboard</a>
+            <a href="#">Projects</a>
+            <a href="#">Reports</a>
+            <a href="#">Feedback</a>
+            <button class="login-top">
+                <i class="fa fa-lock"></i>
                 Login
             </button>
+        </nav>
+    </header>
 
+    <div class="white-line"></div>
+
+    <section class="hero">
+        <div class="login-card">
+            <div class="card-header">
+                <h1>
+                    COUNTY GOVERNMENT OF BOMET PROJECTS
+                    <br>
+                    MONITORING AND TRACKING SYSTEM
+                </h1>
+                <p>
+                    An Integrated System Designed To Strengthen Project Oversight,
+                    Drive Operational Efficiency, And Promote Transparent Accountability
+                    Across All County Departments.
+                </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="tab-buttons">
+                <button id="loginTab" class="active-tab">Login</button>
+                <button id="registerTab">Register</button>
+            </div>
+
+            <div class="card-body">
+
+                <!-- ===== LOGIN FORM ===== -->
+                <div id="loginForm" class="form-section active-section">
+                    <label>Username</label>
+                    <input type="text" id="loginUsername" placeholder="Enter your username">
+
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password">
+
+                    <button id="loginBtn" class="action-btn">Login</button>
+                </div>
+
+                <!-- ===== REGISTER FORM ===== -->
+                <div id="registerForm" class="form-section">
+                    <label>Full Name</label>
+                    <input type="text" id="regFullName" placeholder="e.g. John K. Doe">
+
+                    <label>Email Address</label>
+                    <input type="email" id="regEmail" placeholder="e.g. john@bomet.go.ke">
+
+                    <label>Phone Number</label>
+                    <input type="tel" id="regPhone" placeholder="e.g. 0712 345 678">
+
+                    <label>Password</label>
+                    <input type="password" id="regPassword" placeholder="Create a password (min. 6 characters)">
+
+                    <label>Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" placeholder="Re-enter your password">
+
+                    <button id="registerBtn" class="action-btn">Register</button>
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+                Need access?
+                <a href="#">Contact system administrator</a>
+            </div>
         </div>
+    </section>
 
-        <div class="card-footer">
+    <script>
+        // ===============================
+        // Toggle Login / Register Tabs
+        // ===============================
 
-            Need access?
-            <a href="#">
-                Contact system administrator
-            </a>
+        const loginTab = document.getElementById("loginTab");
+        const registerTab = document.getElementById("registerTab");
+        const loginForm = document.getElementById("loginForm");
+        const registerForm = document.getElementById("registerForm");
 
-        </div>
+        function showLogin() {
+            loginTab.classList.add("active-tab");
+            registerTab.classList.remove("active-tab");
+            loginForm.classList.add("active-section");
+            registerForm.classList.remove("active-section");
+        }
 
-    </div>
+        function showRegister() {
+            registerTab.classList.add("active-tab");
+            loginTab.classList.remove("active-tab");
+            registerForm.classList.add("active-section");
+            loginForm.classList.remove("active-section");
+        }
 
-</section>
+        loginTab.addEventListener("click", showLogin);
+        registerTab.addEventListener("click", showRegister);
 
-<script>
-    // ===============================
-// Login Page Script
-// ===============================
+        // ===============================
+        // Login Logic
+        // ===============================
 
-const username = document.querySelector('input[type="text"]');
-const password = document.querySelector('input[type="password"]');
-const loginBtn = document.getElementById("loginBtn");
+        const loginUsername = document.getElementById("loginUsername");
+        const loginPassword = document.getElementById("loginPassword");
+        const loginBtn = document.getElementById("loginBtn");
 
-// Login Validation
-loginBtn.addEventListener("click", function () {
+        loginBtn.addEventListener("click", function () {
 
-    if (username.value.trim() === "") {
+            if (loginUsername.value.trim() === "") {
+                alert("Please enter your username.");
+                loginUsername.focus();
+                return;
+            }
 
-        alert("Please enter your username.");
-        username.focus();
-        return;
+            if (loginPassword.value.trim() === "") {
+                alert("Please enter your password.");
+                loginPassword.focus();
+                return;
+            }
 
-    }
+            loginBtn.innerHTML = "Logging in...";
+            loginBtn.disabled = true;
 
-    if (password.value.trim() === "") {
-
-        alert("Please enter your password.");
-        password.focus();
-        return;
-
-    }
-
-    loginBtn.innerHTML = "Logging in...";
-
-    loginBtn.disabled = true;
-
-    setTimeout(() => {
-
-        loginBtn.innerHTML = "Login";
-        loginBtn.disabled = false;
-
-        alert("Demo login successful.");
-
-        // Replace with your backend login URL
-        // window.location.href = "dashboard.html";
-
-    }, 1200);
-
-});
-
-
-// Login when pressing Enter
-document.addEventListener("keydown", function(e){
-
-    if(e.key==="Enter"){
-
-        loginBtn.click();
-
-    }
-
-});
-
-
-// Input animation
-document.querySelectorAll("input").forEach(input=>{
-
-    input.addEventListener("focus",()=>{
-
-        input.parentElement.classList.add("active");
-
-    });
-
-    input.addEventListener("blur",()=>{
-
-        input.parentElement.classList.remove("active");
-
-    });
-
-});
-
-
-// Navbar Active State
-document.querySelectorAll("nav a").forEach(link=>{
-
-    link.addEventListener("click",function(e){
-
-        document.querySelectorAll("nav a").forEach(item=>{
-
-            item.classList.remove("active");
+            setTimeout(() => {
+                loginBtn.innerHTML = "Login";
+                loginBtn.disabled = false;
+                alert("Demo login successful.");
+                // window.location.href = "dashboard.html";
+            }, 1200);
 
         });
 
-        this.classList.add("active");
+        // ===============================
+        // Register Logic
+        // ===============================
 
-    });
+        const regFullName = document.getElementById("regFullName");
+        const regEmail = document.getElementById("regEmail");
+        const regPhone = document.getElementById("regPhone");
+        const regPassword = document.getElementById("regPassword");
+        const regConfirmPassword = document.getElementById("regConfirmPassword");
+        const registerBtn = document.getElementById("registerBtn");
 
-});
+        registerBtn.addEventListener("click", function () {
 
+            // --- Validation ---
 
-// Smooth Page Fade
-window.onload=function(){
+            if (regFullName.value.trim() === "") {
+                alert("Please enter your full name.");
+                regFullName.focus();
+                return;
+            }
 
-    document.body.style.opacity="0";
+            if (regEmail.value.trim() === "") {
+                alert("Please enter your email address.");
+                regEmail.focus();
+                return;
+            }
 
-    setTimeout(()=>{
+            // Basic email format check
+            if (!regEmail.value.includes("@") || !regEmail.value.includes(".")) {
+                alert("Please enter a valid email address.");
+                regEmail.focus();
+                return;
+            }
 
-        document.body.style.transition=".5s";
-        document.body.style.opacity="1";
+            if (regPhone.value.trim() === "") {
+                alert("Please enter your phone number.");
+                regPhone.focus();
+                return;
+            }
 
-    },100);
+            if (regPassword.value.trim() === "") {
+                alert("Please enter a password.");
+                regPassword.focus();
+                return;
+            }
 
-};
+            if (regPassword.value.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                regPassword.focus();
+                return;
+            }
+
+            if (regConfirmPassword.value.trim() === "") {
+                alert("Please confirm your password.");
+                regConfirmPassword.focus();
+                return;
+            }
+
+            if (regPassword.value !== regConfirmPassword.value) {
+                alert("Passwords do not match. Please try again.");
+                regConfirmPassword.focus();
+                return;
+            }
+
+            // --- Success simulation ---
+
+            registerBtn.innerHTML = "Registering...";
+            registerBtn.disabled = true;
+
+            setTimeout(() => {
+                registerBtn.innerHTML = "Register";
+                registerBtn.disabled = false;
+
+                alert("Registration successful! You can now log in.");
+
+                // Clear the registration form
+                regFullName.value = "";
+                regEmail.value = "";
+                regPhone.value = "";
+                regPassword.value = "";
+                regConfirmPassword.value = "";
+
+                // Switch to login tab
+                showLogin();
+
+            }, 1200);
+
+        });
+
+        // ===============================
+        // Login when pressing Enter (both forms)
+        // ===============================
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+                // Determine which form is visible
+                if (loginForm.classList.contains("active-section")) {
+                    loginBtn.click();
+                } else if (registerForm.classList.contains("active-section")) {
+                    registerBtn.click();
+                }
+            }
+        });
+
+        // ===============================
+        // Input focus/blur animation
+        // ===============================
+
+        document.querySelectorAll("input").forEach(input => {
+            input.addEventListener("focus", () => {
+                input.parentElement.classList.add("active");
+            });
+            input.addEventListener("blur", () => {
+                input.parentElement.classList.remove("active");
+            });
+        });
+
+        // ===============================
+        // Navbar Active State
+        // ===============================
+
+        document.querySelectorAll("nav a").forEach(link => {
+            link.addEventListener("click", function (e) {
+                document.querySelectorAll("nav a").forEach(item => {
+                    item.classList.remove("active");
+                });
+                this.classList.add("active");
+            });
+        });
+
+        // ===============================
+        // Smooth Page Fade
+        // ===============================
+
+        window.onload = function () {
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+                document.body.style.transition = ".5s";
+                document.body.style.opacity = "1";
+            }, 100);
+        };
     </script>
 
 </body>
